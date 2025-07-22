@@ -1,7 +1,7 @@
 // Create an app that can access the OS of the system and retrieve the OS's name, version, 
 // architecture, cpu count, free memory and total memory
 
-console.log("aaa")
+
 const os = require('node:os')
 
 console.log("OS's Info")
