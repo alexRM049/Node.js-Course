@@ -1,4 +1,6 @@
-// data entry
+// process.argv: It returns the file paths of where the file is being executed and where the Node.js executable.
+// `process.argv[0]` will always be the path to the Node.js executable.
+// `process.argv[1]` will always be the path to the JavaScript file being executed.
 console.log(process.argv)
 
 // process control and when it ruin ends
