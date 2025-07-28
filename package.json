@@ -1,0 +1,28 @@
+{
+  "name": "node-course",
+  "version": "1.0.0",
+  "description": "Best node.js course for free",
+  "keywords": [
+    "course",
+    "node",
+    "node.js"
+  ],
+  "homepage": "https://github.com/alexRM049/Node.js-Course#readme",
+  "bugs": {
+    "url": "https://github.com/alexRM049/Node.js-Course/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexRM049/Node.js-Course.git"
+  },
+  "license": "ISC",
+  "author": "Alexander Ramírez",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "picocolors": "1.1.1"
+  }
+}

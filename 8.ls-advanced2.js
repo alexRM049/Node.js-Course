@@ -40,6 +40,7 @@ async function ls(directory) {
         console.error("The provided directory could no be read: ", folder)
         process.exit(1)
     }
+    // We use map because it retrieves all the data at once (Asyncronously). which makes the process faster.
     const filespromises = files.map(async file => {
 
         //This returns the route of the files we are goinf to list when we read the dirtectory.
