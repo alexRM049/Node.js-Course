@@ -28,6 +28,7 @@ const folder = process.argv[2] ?? '.'
 //To use the then-catch funtionality, we must use promises.
 const fs = require('node:fs/promises')
 const path = require('node:path')
+const pc = require('picocolors')
 
 async function ls(directory) {
 
@@ -37,7 +38,7 @@ async function ls(directory) {
     try {
         files = await fs.readdir(folder)
     } catch {
-        console.error("The provided directory could no be read: ", folder)
+        console.error(pc.red("The provided directory could no be read: ", folder))
         process.exit(1)
     }
     // We use map because it retrieves all the data at once (Asyncronously). which makes the process faster.
@@ -50,7 +51,7 @@ async function ls(directory) {
             //retrieve the file's information
             stats = await fs.stat(filePath) // stat = information
         } catch {
-            console.error("Directory provided could not be read: ", filePath)
+            console.error(pc.red("Directory provided could not be read: ", filePath))
             process.exit(1)
         }
 
@@ -59,12 +60,13 @@ async function ls(directory) {
         const fileSize = stats.size
         const fileModified = stats.mtime.toLocaleString();
 
-        return `${fileType} ${file.padEnd(20)} ${fileSize.toString().padStart(10)} ${fileModified}`
+        return `${fileType} ${pc.blue(file.padEnd(20))} ${pc.green(fileSize.toString().padStart(10))} ${pc.yellow(fileModified)}`
     })
 
     const filesInfo = await Promise.all(filespromises)
 
-    filesInfo.forEach(filesInfo => console.log(filesInfo))
+        .
+        filesInfo.forEach(filesInfo => console.log(filesInfo))
 }
 
 ls(folder)
